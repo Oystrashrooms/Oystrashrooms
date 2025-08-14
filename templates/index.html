@@ -1,27 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Oystrashrooms Orders</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oystra Shrooms - Premium Oyster Mushrooms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            background: url('background-oyster-mushrooms.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.55);
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .shop-btn {
+            background-color: #fff;
+            color: #333;
+            font-weight: 600;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .shop-btn:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .product-section {
+            background-color: #fff;
+            color: #333;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            display: inline-block;
+            margin: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background-color: #fff;
+            width: 250px;
+            vertical-align: top;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card h3 {
+            font-size: 1.3em;
+            margin: 15px 0 10px 0;
+        }
+
+        .product-card select, .product-card input, .product-card textarea {
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 80%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .product-card button {
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                display: block;
+                margin: 20px auto;
+                width: 80%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Oystrashrooms!</h1>
-    <form action="/submit" method="POST">
-        <label>Name:</label><br>
-        <input type="text" name="name" required><br><br>
+    <div class="overlay">
+        <img src="image1forwebsite.png" alt="Oystra Shrooms Logo" class="logo">
+        <h1>Premium Oyster Mushrooms</h1>
+        <p>Fresh, organic, and delivered directly to your doorstep within a week.</p>
+        <a href="#shop" class="shop-btn">Shop Now</a>
+    </div>
 
-        <label>Phone:</label><br>
-        <input type="text" name="phone" required><br><br>
+    <div class="product-section" id="shop">
+        <h2>Choose Your Mushrooms</h2>
 
-        <label>Address:</label><br>
-        <textarea name="address" required></textarea><br><br>
+        <!-- Product Cards with Forms -->
+        <div class="product-card">
+            <img src="istockphoto-467574227-612x612.jpg" alt="White Oyster Mushroom">
+            <h3>White Oyster Mushroom</h3>
+            <form action="/submit" method="POST">
+                <input type="hidden" name="product" value="White Oyster Mushroom">
+                <label>Quantity:</label><br>
+                <select name="quantity">
+                    <option value="200g">200g</option>
+                    <option value="500g">500g</option>
+                    <option value="1kg">1kg</option>
+                </select><br>
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="text" name="phone" placeholder="Phone Number" required><br>
+                <textarea name="address" placeholder="Delivery Address" required></textarea><br>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
 
-        <label>Product:</label><br>
-        <input type="text" name="product" required><br><br>
+        <div class="product-card">
+            <img src="pinkoystermushroom.jpg" alt="Pink Oyster Mushroom">
+            <h3>Pink Oyster Mushroom</h3>
+            <form action="/submit" method="POST">
+                <input type="hidden" name="product" value="Pink Oyster Mushroom">
+                <label>Quantity:</label><br>
+                <select name="quantity">
+                    <option value="200g">200g</option>
+                    <option value="500g">500g</option>
+                    <option value="1kg">1kg</option>
+                </select><br>
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="text" name="phone" placeholder="Phone Number" required><br>
+                <textarea name="address" placeholder="Delivery Address" required></textarea><br>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
 
-        <label>Quantity</label><br>
-        <input type="text" name="quantity" required><br><br>
+        <div class="product-card">
+            <img src="yellowoyster.jpg" alt="Yellow Oyster Mushroom">
+            <h3>Yellow Oyster Mushroom</h3>
+            <form action="/submit" method="POST">
+                <input type="hidden" name="product" value="Yellow Oyster Mushroom">
+                <label>Quantity:</label><br>
+                <select name="quantity">
+                    <option value="200g">200g</option>
+                    <option value="500g">500g</option>
+                    <option value="1kg">1kg</option>
+                </select><br>
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="text" name="phone" placeholder="Phone Number" required><br>
+                <textarea name="address" placeholder="Delivery Address" required></textarea><br>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
 
-        <button type="submit">Submit Order</button>
-    </form>
+    </div>
 </body>
 </html>
